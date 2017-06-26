@@ -13,5 +13,11 @@
  *= require_tree .
  *= require_self
  */
+ .social-btn {
+   color: purple;
+   width: 200px;
+   padding: 20px;
+   margin: 20px;
+ }
 @import "bootstrap-sprockets";
 @import "bootstrap";
