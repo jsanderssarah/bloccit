@@ -17,17 +17,14 @@ post = Post.all
   )
 end
 
-  Post.find_or_create_by!(
-    title: "This is a Unique Title"
-    body: "This is a test to see if this post shows up a single time."
-  )
- end
+Post.find_or_create_by!(title: "This is a Unique Title", body: "This is a test to see if this post shows up a single time.")
 
- Comment.create!(
-   post: post.
-   body:  "This is a comment on the unique post"
- )
- end
+
+Comment.create!(
+  post: post(),
+  body:  "This is a comment on the unique post"
+)
+
 
 puts "Seed finished"
 puts "#{Post.count} posts created"
