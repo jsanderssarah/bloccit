@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :posts
+  resources :topics do
+    #we pass resources :posts to the resources :topics block. This nests the post routes under the topic routes.
+    resources :posts, except: [:index]
+  end
 
   get 'about' => 'welcome#about'
   root 'welcome#index'
