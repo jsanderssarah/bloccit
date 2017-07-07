@@ -1,6 +1,7 @@
 require 'random_data'
 
 #create posts
+
 15.times do
   Topic.create!(
    name: RandomData.random_sentence
@@ -17,6 +18,13 @@ topics = Topic.all
 end
 posts = Post.all
 
+15.times do
+  SponsoredPost.create!(
+    title: RandomData.random_sentence,
+    body: RandomData.random_paragraph
+  )
+end
+sponsored_posts = SponsoredPost.all
 #create comments
 100.times do
   Comment.create!(
