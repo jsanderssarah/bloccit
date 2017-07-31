@@ -13,14 +13,12 @@ class User < ApplicationRecord
 
   has_secure_password
 
-  def format_name
-    if name
-      name_array = []
-      name.split.each do |name_part|
-        name_array << name_part.capitalize
-      end
+  def capitalize_name
+    if name.present?
+      name_array = name.split(" ")
+      name_array.each { |name| name.capitalize! }
       self.name = name_array.join(" ")
-   end
+    end
   end
 
 end
