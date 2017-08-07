@@ -10,14 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170805212414) do
+ActiveRecord::Schema.define(version: 20170807201751) do
 
   create_table "comments", force: :cascade do |t|
     t.text "body"
     t.integer "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
     t.index ["post_id"], name: "index_comments_on_post_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -29,14 +31,6 @@ ActiveRecord::Schema.define(version: 20170805212414) do
     t.integer "user_id"
     t.index ["topic_id"], name: "index_posts_on_topic_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
-  end
-
-  create_table "questions", force: :cascade do |t|
-    t.string "title"
-    t.text "body"
-    t.boolean "resolved"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "sponsored_posts", force: :cascade do |t|
@@ -61,6 +55,7 @@ ActiveRecord::Schema.define(version: 20170805212414) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "role"
   end
 
 end
