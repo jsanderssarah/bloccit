@@ -36,15 +36,6 @@ posts = Post.all
     body: RandomData.random_paragraph
   )
 end
-sponsored_posts = SponsoredPost.all
-#create comments
-100.times do
-  Comment.create!(
-    user: users.sample,
-    post: posts.sample,
-    body: RandomData.random_paragraph
-  )
-end
 
 Post.find_or_create_by!(
   title: "This is a Unique Title",
