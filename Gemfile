@@ -35,3 +35,5 @@ source 'https://rubygems.org'
  gem 'turbolinks'
  #The Figaro gem provides an elegant solution for handling sensitive data with environment variables
  gem 'figaro', '1.0'
+
+ gem 'factory_girl_rails', '~> 4.0'
