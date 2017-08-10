@@ -3,7 +3,6 @@ class PostsController < ApplicationController
   before_action :require_sign_in, except: :show
   before_action :authorize_user, except: [:new, :show, :create]
   # #use a before_action filter to call the require_sign_in method before each of our controller actions, except for the show action
-
   def show
    @post = Post.find(params[:id])
   end

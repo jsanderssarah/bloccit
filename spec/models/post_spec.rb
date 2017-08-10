@@ -54,6 +54,7 @@ RSpec.describe Post, type: :model do
        end
      end
 
+
      describe "#update_rank" do
        it "calculates the correct rank" do
          post.update_rank
@@ -70,6 +71,12 @@ RSpec.describe Post, type: :model do
          old_rank = post.rank
          post.votes.create!(value: -1)
          expect(post.rank).to eq (old_rank - 1)
+       end
+     end
+
+     describe "create_vote" do
+       it "associates vote with post's user" do
+         expect(post.votes.first.user).to eq(post.user)
        end
      end
    end
