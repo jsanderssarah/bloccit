@@ -33,3 +33,5 @@ source 'https://rubygems.org'
  gem 'jquery-rails'
  # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
  gem 'turbolinks'
+ #The Figaro gem provides an elegant solution for handling sensitive data with environment variables
+ gem 'figaro', '1.0'
