@@ -2,12 +2,12 @@ class VotesController < ApplicationController
   before_action :require_sign_in
   def up_vote
      update_vote(1)
-     redirect_to :back
+     redirect_back(fallback_location: root_path)
    end
 
    def down_vote
      update_vote(-1)
-     redirect_to :back
+     redirect_back(fallback_location: root_path)
    end
 
    private
@@ -21,14 +21,5 @@ class VotesController < ApplicationController
      else
        @vote = current_user.votes.create(value: new_value, post: @post)
      end
-   end
-
-
-
-   
-
-    redirect_to :back
   end
-
-
 end
